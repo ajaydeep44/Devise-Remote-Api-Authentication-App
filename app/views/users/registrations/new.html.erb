@@ -1,0 +1,76 @@
+
+<div class="row">
+
+  <div class="col s4 offset-s4">
+    <h4>Sign up</h4>
+    <div style="margin-top: 2em;">
+      <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post"><div style="display:none">
+        <input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="KElxL4W2SlVUr79+BcZlRsmu2CdMC0gdBWoExpoEDao="></div>
+        <div class="input-field">
+          <input autofocus="autofocus" class="validate" id="user_name" name="user[name]" type="text">
+          <label for="user_name" class="">Name</label><br>
+        </div>
+
+        <div class="input-field ">
+          <input autofocus="autofocus" class="validate" id="user_mobile_number" name="user[mobile_number]" type="text">
+          <label for="user_mobile_number">Mobile number</label><br>
+        </div>
+
+        <div class="input-field">
+          <input autofocus="autofocus" class="validate" id="user_email" name="user[email]" type="email" value="">
+          <label for="user_email">Email</label><br>
+        </div>
+
+        <div class="input-field">
+          <input autocomplete="off" class="validate" id="user_password" name="user[password]" type="password">
+          <label for="user_password">Password</label>
+        </div>
+
+        <div class="input-field">
+          <input autocomplete="off" class="validate" id="user_password_confirmation" name="user[password_confirmation]" type="password">
+          <label for="user_password_confirmation">Password confirmation</label>
+        </div>
+
+        <div>
+          <label>City</label>
+          <select name="user[city_id]">
+            <option value="" disabled="" selected="">Select City</option>
+            <option value="1">Bangalore</option>
+            <option value="2">Mysore</option>
+            <option value="3">Dhaka</option>
+          </select>
+        </div>
+        <div>
+          <label for="product">Product</label>
+          <select name="user[product_id]" id="product">
+            <option value="" disabled="" selected="">Select Product</option>
+            <option value="console">Console</option>
+            <option value="payment">Payment</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="role">Roles</label>
+          <select  name="user[role_id]" id="role">
+            <option value="" disabled="" selected="">Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="agent">Agent</option>
+          </select>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action" style="margin-top: 1em;">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<%= render "users/shared/links" %>
+
+<script>
+  $(function(){
+    $('select').material_select();
+  });
+</script>
